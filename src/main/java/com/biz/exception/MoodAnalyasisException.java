@@ -14,4 +14,12 @@ public class MoodAnalyasisException extends Exception{
     public MoodAnalyasisException(String message) {
         this.message=message;
     }
+
+    @Override
+    public String toString() {
+        return "MoodAnalyasisException{" +
+                "exceptionType=" + exceptionType +
+                ", message='" + message + '\'' +
+                '}';
+    }
 }

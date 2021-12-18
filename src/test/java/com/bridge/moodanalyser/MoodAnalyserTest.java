@@ -42,8 +42,10 @@ public class MoodAnalyserTest {
             actualMood = mood.analyseMood();
        }
         catch (MoodAnalyasisException e){
-            String expectedMood="null";
-            Assert.assertEquals(expectedMood,e.message);
+            MoodAnalyasisException.ExceptionType expectedMood=MoodAnalyasisException.ExceptionType.NULL;
+            System.out.println(e);
+            Assert.assertEquals(expectedMood,e.exceptionType);
+
         }
 
     }
@@ -55,9 +57,9 @@ public class MoodAnalyserTest {
         try {
             actualMood = mood.analyseMood();
         } catch (MoodAnalyasisException e) {
-            String expectedMood = "EmptyMood";
-            System.out.println(e.message);
-            Assert.assertEquals(expectedMood,e.message);
+            MoodAnalyasisException.ExceptionType expectedMood=MoodAnalyasisException.ExceptionType.EMPTY;
+            System.out.println(e);
+            Assert.assertEquals(expectedMood,e.exceptionType);
         }
 
     }

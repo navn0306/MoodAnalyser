@@ -18,14 +18,14 @@ public class MoodAnalyser {
     public String analyseMood() throws MoodAnalyasisException {
         try {
             if(this.message.length()==0){
-                throw new MoodAnalyasisException("EmptyMood", MoodAnalyasisException.ExceptionType.EMPTY);
+                throw new MoodAnalyasisException("Invalid mood", MoodAnalyasisException.ExceptionType.EMPTY);
             }
             if (this.message.toLowerCase().contains("sad"))
                 return "sad";
             return "happy";
         }
         catch (NullPointerException e){
-            throw new MoodAnalyasisException("null", MoodAnalyasisException.ExceptionType.NULL);
+            throw new MoodAnalyasisException("Invalid mood", MoodAnalyasisException.ExceptionType.NULL);
 
         }
 
